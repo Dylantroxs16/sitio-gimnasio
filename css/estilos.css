@@ -1,8 +1,15 @@
-/* Reset de estilos */
+/* Configuración global y reseteo */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+}
+
+:root {
+    --color-principal: #ff4500;
+    --color-secundario: #111111;
+    --color-texto: #333333;
+    --ancho-max: 1140px;
 }
 
 body {
@@ -12,13 +19,6 @@ body {
     background-color: #f9f9f9;
 }
 
-:root {
-    --color-principal: #ff4500; /* Naranja/Rojo deportivo vibrante para PowerFit Gym */
-    --color-secundario: #111111;
-    --color-texto: #333333;
-    --ancho-max: 1140px;
-}
-
 .contenedor {
     width: 100%;
     max-width: var(--ancho-max);
@@ -26,7 +26,7 @@ body {
     padding: 0 1rem;
 }
 
-/* Estilos del header */
+/* Header y navegación */
 .header {
     display: flex;
     justify-content: space-between;
@@ -48,23 +48,8 @@ body {
     letter-spacing: 1px;
 }
 
-.menu ul {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.menu a {
-    color: var(--color-secundario);
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.2s;
-}
-
-.menu a:hover {
-    color: var(--color-principal);
+.menu-toggle {
+    display: none;
 }
 
 .hamburguesa {
@@ -84,6 +69,42 @@ body {
     background: var(--color-secundario);
     border-radius: 2px;
     transition: transform 0.2s, opacity 0.2s;
+}
+
+.menu { 
+    display: none; 
+    width: 100%;
+}
+
+.menu ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    color: var(--color-secundario);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.menu a:hover {
+    color: var(--color-principal);
+}
+
+.menu-toggle:checked ~ .menu {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.menu-toggle:checked ~ .menu ul {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
 }
 
 /* Portada */
@@ -132,7 +153,7 @@ body {
     background-color: #f1f1f1;
 }
 
-/* Secciones generales */
+/* Secciones y tarjetas */
 section {
     padding: 3rem 0;
 }
@@ -145,7 +166,6 @@ section h2 {
     text-transform: uppercase;
 }
 
-/* Tarjetas */
 .cards { 
     display: flex; 
     flex-wrap: wrap; 
@@ -194,7 +214,7 @@ section h2 {
     text-align: center;
 }
 
-/* Acordeón (Preguntas frecuentes) */
+/* Acordeón */
 .accordion {
     max-width: 800px;
     margin: 0 auto;
@@ -203,19 +223,23 @@ section h2 {
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
+.faq-toggle {
+    display: none;
+}
+
 .accordion .item {
     background: #fff;
+    border-bottom: 1px solid #eee;
 }
 
 .accordion .titulo {
+    display: block;
     width: 100%;
     padding: 1.2rem 1rem;
     text-align: left;
     font-size: 1.05rem;
     font-weight: bold;
     background: #fff;
-    border: 0;
-    border-bottom: 1px solid #eee;
     cursor: pointer;
     color: var(--color-secundario);
     transition: background 0.2s, color 0.2s;
@@ -226,17 +250,16 @@ section h2 {
     color: var(--color-principal);
 }
 
-.accordion .contenido { 
-    display: none; 
-    padding: 1rem; 
+.accordion .contenido {
+    display: none;
+    padding: 1rem;
     background: #fafafa;
-    border-bottom: 1px solid #eee;
     color: #555;
 }
 
-.accordion .item.activo .contenido { 
-    display: block; 
-} 
+.faq-toggle:checked ~ .contenido {
+    display: block;
+}
 
 /* Galería */
 .galeria {
@@ -298,11 +321,7 @@ footer a:hover {
     padding: 0;
 }
 
-/* Media Queries para diseño responsivo */
-.menu { 
-    display: none; /* Oculto en móviles hasta activar hamburguesa */
-}
-
+/* Diseño responsivo */
 @media (min-width: 501px) {
     .portada h1 { font-size: 2.5rem; }
 }
@@ -324,8 +343,19 @@ footer a:hover {
 @media (min-width: 991px) { 
     .tarjeta { width: calc(33.333% - 1rem); } 
     
-    .menu { display: block; }       /* Menú visible en pantallas grandes */
-    .hamburguesa { display: none; } /* Ocultar botón hamburguesa */
+    .menu-toggle,
+    .hamburguesa {
+        display: none !important;
+    }
+    
+    .menu { 
+        display: block !important; 
+    }
+
+    .menu ul {
+        flex-direction: row !important;
+        align-items: initial !important;
+    }
     
     .portada h1 { font-size: 3rem; }
 }
