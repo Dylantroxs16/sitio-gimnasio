@@ -1,32 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - PowerFit Gym</title>
-    <link rel="stylesheet" href="./css/estilos.css">
-</head>
-
-<body>
-  <header class="header">
-    <a href="index.html" class="logo">PowerFit Gym</a> 
-    
-    <input type="checkbox" id="menu-toggle" class="menu-toggle">
-    <label for="menu-toggle" class="hamburguesa">
-        <span></span>
-        <span></span>
-        <span></span> 
-    </label>
-
-    <nav class="menu"> 
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="servicio.html">Servicio</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+<?php include 'header.php'; ?>
 
   <main>
     <section class="portada contenedor">
@@ -71,3 +43,4 @@
   </footer>
 </body>
 </html>
+<?php include 'footer.php'; ?>

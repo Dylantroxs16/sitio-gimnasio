@@ -1,32 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros - PowerFit Gym</title>
-    <link rel="stylesheet" href="./css/estilos.css">
-</head>
-
-<body>
-  <header class="header">
-    <a href="index.html" class="logo">PowerFit Gym</a> 
-    
-    <input type="checkbox" id="menu-toggle" class="menu-toggle">
-    <label for="menu-toggle" class="hamburguesa">
-        <span></span>
-        <span></span>
-        <span></span> 
-    </label>
-
-    <nav class="menu"> 
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="servicio.html">Servicio</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+<?php include 'header.php'; ?>
 
   <main>
     <section class="portada contenedor">
@@ -59,17 +31,19 @@
       </div>
     </section>
   </main>
-  
+
+
   <footer>
     <div>
       <p><strong>PowerFit Gym</strong></p>
       <p>Teléfono: 4000-5000</p>
     </div>
-    <ul class="redes">
-      <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
-      <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
-    </ul>
+    <ol class="redes">
+      <ol><a href="https://www.facebook.com/" target="_blank">Facebook</a></ol>
+      <ol><a href="https://www.instagram.com/" target="_blank">Instagram</a></ol>
+    </ol>
     <p>&copy; 2026 PowerFit Gym. Todos los derechos reservados.</p>
   </footer>
 </body>
 </html>
+<?php include 'footer.php'; ?>

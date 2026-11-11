@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+
 :root {
     --color-principal: #ff4500;
     --color-secundario: #111111;
@@ -26,6 +27,7 @@ body {
     padding: 0 1rem;
 }
 
+
 /* Header y navegación */
 .header {
     display: flex;
@@ -43,6 +45,7 @@ body {
     font-size: 1.4rem;
     font-weight: 900;
     color: var(--color-principal);
+ 
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -51,6 +54,10 @@ body {
 .menu-toggle {
     display: none;
 }
+
+
+
+
 
 .hamburguesa {
     display: flex;
@@ -143,6 +150,8 @@ body {
 .boton:hover {
     transform: translateY(-2px);
 }
+
+
 
 .portada .boton {
     background-color: #ffffff;
@@ -358,4 +367,47 @@ footer a:hover {
     }
     
     .portada h1 { font-size: 3rem; }
+}
+
+#servicios {
+    margin-bottom: 2rem;
+}
+
+.slide { 
+  display: none; 
+}
+
+.slide.activa { 
+  display: block; 
+}
+
+.carrusel {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+}
+
+.slide { 
+  display: none; 
+  width: 100%;
+  height: auto;
+}
+
+.slide.activa { 
+  display: block; 
+}
+
+/* Ocultar el contenido por defecto */
+.accordion .contenido {
+  display: none;
+}
+
+/* Mostrar el contenido cuando el item tenga la clase activo */
+.accordion .item.activo .contenido {
+  display: block;
+}
+
+/* Estilo opcional para que el cursor cambie al pasar sobre la pregunta */
+.accordion .titulo {
+  cursor: pointer;
 }
